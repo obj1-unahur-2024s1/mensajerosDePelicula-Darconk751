@@ -1,0 +1,13 @@
+import personajes.*
+
+test "Roberto tiene 90 y puede llevar un paquete que esta pago en un camión que tiene un acoplado" {
+	roberto.cambiarPeso(90)
+	roberto.cambiarTransporteEnElQueViaja(camion)
+	camion.nuevaCantidadDeAcoplados(1)
+	assert.that(roberto.puedeEntregar(paquete))
+}
+
+test "Neo con crédito no puede llevar un paquete que no está pago a la matrix"{
+	paquete.estaPago()
+	assert.notThat(neo.puedeEntregar(paquete))
+}
